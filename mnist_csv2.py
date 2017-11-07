@@ -1,3 +1,6 @@
+# This script converts the MNIST .idx1-ubyte files to .csv files.
+# This is not my script. Original script credit goes to: Joseph Redmon https://pjreddie.com/projects/mnist-in-csv/
+
 def convert(imgf, labelf, outf, n):
     f = open(imgf, "rb")
     o = open(outf, "w")
@@ -19,7 +22,9 @@ def convert(imgf, labelf, outf, n):
     o.close()
     l.close()
 
-convert("/home/sb/Desktop/Dropbox/AI_NN/Python_Scripts/MNIST_DATA/train-images.idx3-ubyte", "/home/sb/Desktop/Dropbox/AI_NN/Python_Scripts/MNIST_DATA/train-labels.idx1-ubyte",
+# Download the .idx1-ubyte files from http://yann.lecun.com/exdb/mnist/ to the local Python project path.
+# Replace the path names below with the local path name.
+convert("/Python project directory goes here/train-images.idx3-ubyte", "/Python project directory goes here/train-labels.idx1-ubyte",
         "mnist_train.csv", 60000)
-convert("/home/sb/Desktop/Dropbox/AI_NN/Python_Scripts/MNIST_DATA/t10k-images.idx3-ubyte", "/home/sb/Desktop/Dropbox/AI_NN/Python_Scripts/MNIST_DATA/t10k-labels.idx1-ubyte",
+convert("/Python project directory goes here/t10k-images.idx3-ubyte", "/Python project directory goes here/t10k-labels.idx1-ubyte",
         "mnist_test.csv", 10000)
